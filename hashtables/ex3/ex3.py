@@ -2,7 +2,21 @@ def intersection(arrays):
     """
     YOUR CODE HERE
     """
-    # Your code here
+
+    result = []
+    dir = {}
+
+    for array in arrays:
+        for item in array:
+            if item in dir:
+                dir[item] += 1
+            else:
+                dir[item] = 1
+
+
+    for key, value in dir.items():
+        if value == len(arrays):
+            result.append(key)
 
     return result
 
